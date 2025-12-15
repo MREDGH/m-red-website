@@ -158,9 +158,12 @@ const Contact = () => {
         }
 
         .copyright {
-          font-size: 0.6rem;
-          opacity: 0.6;
           margin-top: 2rem;
+        }
+
+        .copyright p {
+          font-size: 0.75rem;
+          opacity: 0.5;
         }
 
         .footer-separator {
