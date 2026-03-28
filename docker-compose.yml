@@ -1,0 +1,18 @@
+services:
+  m-red-website:
+    image: ghcr.io/mredgh/m-red-website:latest
+    container_name: m-red-website
+    restart: unless-stopped
+    expose:
+      - "80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.m-red-website.rule=Host(`m-red-website.provatoplayground.nl`)"
+      - "traefik.http.routers.m-red-website.tls.certresolver=letsencrypt"
+      - "traefik.http.services.m-red-website.loadbalancer.server.port=80"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

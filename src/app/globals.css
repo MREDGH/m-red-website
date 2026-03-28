@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-marine: #0A2342;
+  --color-marine-light: #112d52;
+  --color-accent: #4B6F44;
+  --color-accent-light: #5a8451;
+  --color-offwhite: #F4F7F6;
+  --color-offwhite-dark: #e8edeb;
+  --font-heading: var(--font-cormorant);
+  --font-body: var(--font-opensans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), "Open Sans", sans-serif;
+  color: #333;
+  background-color: var(--color-offwhite);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), "Cormorant Garamond", serif;
+}
+
+/* Reveal-on-scroll animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cookie banner slide-up */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+/* Accordion content transition */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease-out;
+}
+
+.accordion-content.open {
+  grid-template-rows: 1fr;
+}
+
+.accordion-inner {
+  overflow: hidden;
+}
+
+/* Selection color */
+::selection {
+  background-color: #4B6F44;
+  color: #fff;
+}
