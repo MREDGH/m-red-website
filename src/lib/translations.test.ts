@@ -35,7 +35,6 @@ describe("translations", () => {
       "focus",
       "principles",
       "approach",
-      "portal",
       "contact",
     ];
     for (const lang of ["en", "nl"] as Language[]) {

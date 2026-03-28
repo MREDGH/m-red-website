@@ -27,7 +27,6 @@ describe("Hero", () => {
     expect(screen.getByText("Focus")).toBeInTheDocument();
     expect(screen.getByText("Principles")).toBeInTheDocument();
     expect(screen.getByText("Approach")).toBeInTheDocument();
-    expect(screen.getByText("Portal")).toBeInTheDocument();
     expect(screen.getByText("Contact")).toBeInTheDocument();
   });
 

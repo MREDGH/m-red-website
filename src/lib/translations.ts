@@ -5,7 +5,6 @@ export interface Translations {
     focus: string;
     principles: string;
     approach: string;
-    portal: string;
     contact: string;
   };
   hero: {
@@ -36,11 +35,6 @@ export interface Translations {
       content: string;
     }>;
   };
-  portal: {
-    sectionTitle: string;
-    description: string;
-    cta: string;
-  };
   contact: {
     sectionTitle: string;
     intro: string;
@@ -69,7 +63,6 @@ const en: Translations = {
     focus: "Focus",
     principles: "Principles",
     approach: "Approach",
-    portal: "Portal",
     contact: "Contact",
   },
   hero: {
@@ -150,12 +143,6 @@ const en: Translations = {
       },
     ],
   },
-  portal: {
-    sectionTitle: "Client Portal",
-    description:
-      "Access our Development Discovery Tool to explore potential development locations, view data-driven analyses, and collaborate on site selection.",
-    cta: "Login to DDT",
-  },
   contact: {
     sectionTitle: "Partner with M-RED",
     intro:
@@ -188,7 +175,6 @@ const nl: Translations = {
     focus: "Focus",
     principles: "Principes",
     approach: "Aanpak",
-    portal: "Portal",
     contact: "Contact",
   },
   hero: {
@@ -268,12 +254,6 @@ const nl: Translations = {
           "Zodra een locatie is gevalideerd, beheren wij het volledige acquisitie- en ontwikkelingsproces. Van onderhandelingen en due diligence tot vergunningen, bouwtoezicht en uiteindelijke overdracht leveren wij turnkey zorgresidenties die klaar zijn voor gebruik. Gedurende deze fase onderhouden we continue afstemming met de exploitant om te garanderen dat het eindresultaat overeenkomt met hun visie.",
       },
     ],
-  },
-  portal: {
-    sectionTitle: "Client Portal",
-    description:
-      "Krijg toegang tot onze Development Discovery Tool om potenti\u00EBle ontwikkelingslocaties te verkennen, datagestuurde analyses te bekijken en samen te werken aan locatieselectie.",
-    cta: "Inloggen op DDT",
   },
   contact: {
     sectionTitle: "Partner met M-RED",

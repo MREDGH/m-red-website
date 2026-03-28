@@ -1,12 +1,16 @@
 "use client";
 
+import { LogIn } from "lucide-react";
 import { useLanguage } from "@/components/language-provider";
+
+const DDT_URL =
+  process.env.NEXT_PUBLIC_DDT_URL ||
+  "https://m-red-ddt.provatoplayground.nl";
 
 const NAV_ITEMS = [
   { key: "focus" as const, href: "#philosophy" },
   { key: "principles" as const, href: "#values" },
   { key: "approach" as const, href: "#approach" },
-  { key: "portal" as const, href: "#portal" },
   { key: "contact" as const, href: "#contact" },
 ] as const;
 
@@ -18,20 +22,32 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-screen flex-col items-center justify-center bg-marine text-white"
     >
-      {/* Language switcher */}
-      <button
-        onClick={toggleLanguage}
-        className="absolute top-6 right-6 z-10 flex items-center gap-1 rounded border border-white/30 px-3 py-1.5 text-sm font-medium tracking-wide text-white/80 transition-colors hover:border-white/60 hover:text-white md:top-8 md:right-8"
-        aria-label={`Switch to ${lang === "en" ? "Dutch" : "English"}`}
-      >
-        <span className={lang === "en" ? "text-white" : "text-white/50"}>
-          EN
-        </span>
-        <span className="text-white/30">|</span>
-        <span className={lang === "nl" ? "text-white" : "text-white/50"}>
-          NL
-        </span>
-      </button>
+      {/* Login icon + Language switcher */}
+      <div className="absolute top-6 right-6 z-10 flex items-center gap-2 md:top-8 md:right-8">
+        <a
+          href={`${DDT_URL}/login`}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Client Portal"
+          className="flex items-center justify-center rounded border border-white/30 p-1.5 text-white/80 transition-colors hover:border-white/60 hover:text-white"
+          aria-label="Client Portal"
+        >
+          <LogIn className="h-4 w-4" />
+        </a>
+        <button
+          onClick={toggleLanguage}
+          className="flex items-center gap-1 rounded border border-white/30 px-3 py-1.5 text-sm font-medium tracking-wide text-white/80 transition-colors hover:border-white/60 hover:text-white"
+          aria-label={`Switch to ${lang === "en" ? "Dutch" : "English"}`}
+        >
+          <span className={lang === "en" ? "text-white" : "text-white/50"}>
+            EN
+          </span>
+          <span className="text-white/30">|</span>
+          <span className={lang === "nl" ? "text-white" : "text-white/50"}>
+            NL
+          </span>
+        </button>
+      </div>
 
       {/* Main content */}
       <div className="flex flex-col items-center gap-4 px-6 text-center">
